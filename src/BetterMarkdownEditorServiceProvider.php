@@ -5,6 +5,7 @@ namespace AC\BetterMarkdownEditor;
 use Filament\Support\Assets\Css;
 use Filament\Support\Assets\Js;
 use Filament\Support\Facades\FilamentAsset;
+use Filament\Support\Facades\FilamentIcon;
 use Spatie\LaravelPackageTools\Commands\InstallCommand;
 use Spatie\LaravelPackageTools\Package;
 use Spatie\LaravelPackageTools\PackageServiceProvider;
@@ -50,6 +51,8 @@ class BetterMarkdownEditorServiceProvider extends PackageServiceProvider
             $this->getScriptData(),
             $this->getAssetPackageName()
         );
+
+        FilamentIcon::register($this->getIcons());
     }
 
     protected function getAssetPackageName(): ?string
@@ -63,6 +66,11 @@ class BetterMarkdownEditorServiceProvider extends PackageServiceProvider
             Css::make('better-markdown-editor-styles', __DIR__ . '/../resources/dist/better-markdown-editor.css'),
             Js::make('better-markdown-editor-scripts', __DIR__ . '/../resources/dist/better-markdown-editor.js'),
         ];
+    }
+
+    protected function getIcons(): array
+    {
+        return [];
     }
 
     protected function getRoutes(): array
