@@ -37,8 +37,22 @@ return [
 ## Usage
 
 ```php
-$variable = new AC\BetterMarkdownEditor();
-echo $variable->echoPhrase('Hello, VendorName!');
+use AC\BetterMarkdownEditor\BetterMarkdownEditor;
+
+BetterMarkdownEditor::make('markdown')
+    ->toolbarButtons([
+        'blockquote',
+        'bold',
+        'bulletList',
+        'italic',
+        'link',
+        'orderedList',
+        'redo',
+        'strike',
+        'undo',
+    ])
+    ->hiddenLabel()
+    ->hasLanguageAssistance(),
 ```
 
 ## Testing
