@@ -1,29 +1,26 @@
 {
-    "name": ":vendor_slug/:package_slug",
-    "description": ":package_description",
+    "name": "assertchris/better-markdown-editor",
+    "description": "A better markdown editor than the one that ships with Filament",
     "keywords": [
-        ":vendor_name",
         "laravel",
-        ":package_slug"
+        "filament"
     ],
-    "homepage": "https://github.com/:vendor_slug/:package_slug",
+    "homepage": "https://github.com/assertchris/better-markdown-editor",
     "support": {
-        "issues": "https://github.com/:vendor_slug/:package_slug/issues",
-        "source": "https://github.com/:vendor_slug/:package_slug"
+        "issues": "https://github.com/assertchris/better-markdown-editor/issues",
+        "source": "https://github.com/assertchris/better-markdown-editor"
     },
     "license": "MIT",
     "authors": [
         {
-            "name": ":author_name",
-            "email": "author@domain.com",
+            "name": "Christopher Pitt",
+            "email": "me@assertchris.io",
             "role": "Developer"
         }
     ],
     "require": {
-        "php": "^8.1",
-        "filament/filament": "^3.0",
-        "filament/forms": "^3.0",
-        "filament/tables": "^3.0",
+        "php": "^8.3",
+        "filament/forms": "v3.2.74",
         "spatie/laravel-package-tools": "^1.15.0"
     },
     "require-dev": {
@@ -41,13 +38,12 @@
     },
     "autoload": {
         "psr-4": {
-            "VendorName\\Skeleton\\": "src/",
-            "VendorName\\Skeleton\\Database\\Factories\\": "database/factories/"
+            "AC\\BetterMarkdownEditor\\": "src/"
         }
     },
     "autoload-dev": {
         "psr-4": {
-            "VendorName\\Skeleton\\Tests\\": "tests/"
+            "AC\\BetterMarkdownEditor\\Tests\\": "tests/"
         }
     },
     "scripts": {
@@ -67,11 +63,8 @@
     "extra": {
         "laravel": {
             "providers": [
-                "VendorName\\Skeleton\\SkeletonServiceProvider"
-            ],
-            "aliases": {
-                "Skeleton": "VendorName\\Skeleton\\Facades\\Skeleton"
-            }
+                "AC\\BetterMarkdownEditor\\BetterMarkdownEditorServiceProvider"
+            ]
         }
     },
     "minimum-stability": "dev",
