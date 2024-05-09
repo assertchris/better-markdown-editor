@@ -40,20 +40,30 @@ return [
 use AC\BetterMarkdownEditor\BetterMarkdownEditor;
 
 BetterMarkdownEditor::make('markdown')
-    ->toolbarButtons([
-        'blockquote',
-        'bold',
-        'bulletList',
-        'italic',
-        'link',
-        'orderedList',
-        'redo',
-        'strike',
-        'undo',
-    ])
-    ->hiddenLabel()
+    // ...all the methods from the current MarkdownEditor
+    // with the addition of some new methods
     ->hasLanguageAssistance(),
 ```
+
+## Motivation
+
+> Why build this?
+
+I wanted to build a writing platform. I love Filament, but none of the fields had the functionality I use other apps for. It started as me wanting to make Filament's MarkdownEditor able to point out needlessly complex sentences and poor wording.
+
+> Why not contribute those improvements to Filament?
+
+I tried, but they're understandably hesitant to take on the maintenance burden.
+
+> Why is it better?
+
+For a start, it does what Hemingway does; but better.
+
+Here's what I am planning to add in the near future (while procrastinating writing projects):
+
+- fullscreen mode
+- opt-in LLM-based error correction (with loads of caveats and apprehension)
+- an upgrade to CodeMirror 6
 
 ## Testing
 
