@@ -19,10 +19,18 @@
                     ->class(['fi-fo-markdown-editor max-w-full overflow-hidden font-mono text-base text-gray-950 dark:text-white sm:text-sm'])
             "
         >
-            <div
-                ax-load="visible"
-                ax-load-src="{{ \Filament\Support\Facades\FilamentAsset::getAlpineComponentSrc('markdown-editor', 'filament/forms') }}"
-                x-data="markdownEditorFormComponent({
+            <div x-data="{
+                moderateSentences: 0,
+                complexSentences: 0,
+                passivePhrases: 0,
+                adverbPhrases: 0,
+                complexPhrases: 0,
+                qualifiedPhrases: 0,
+            }">
+                <div
+                    ax-load="visible"
+                    ax-load-src="{{ \Filament\Support\Facades\FilamentAsset::getAlpineComponentSrc('markdown-editor', 'filament/forms') }}"
+                    x-data="markdownEditorFormComponent({
                     canAttachFiles: @js($hasToolbarButton('attachFiles')),
                     isLiveDebounced: @js($isLiveDebounced()),
                     isLiveOnBlur: @js($isLiveOnBlur()),
@@ -48,12 +56,13 @@
                     },
                     @include('better-markdown-editor::includes/set-up-using')
                 })"
-                x-ignore
-                wire:ignore
-                {{ $getExtraAlpineAttributeBag() }}
-            >
-                <textarea x-ref="editor" class="hidden"></textarea>
-                @include('better-markdown-editor::includes/stats')
+                    x-ignore
+                    wire:ignore
+                    {{ $getExtraAlpineAttributeBag() }}
+                >
+                    <textarea x-ref="editor" class="hidden"></textarea>
+                    @include('better-markdown-editor::includes/stats')
+                </div>
             </div>
         </x-filament::input.wrapper>
     @endif

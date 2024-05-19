@@ -6,7 +6,7 @@ import {
     getQualifiedPhrases,
 } from '@assertchris/ellison'
 
-window.betterMarkdownEditorSetUpUsing = (component) => {
+window.betterMarkdownEditorSetUpUsing = function(component) {
     const clearStats = () => {
         component.moderateSentences = 0
         component.complexSentences = 0
@@ -15,8 +15,6 @@ window.betterMarkdownEditorSetUpUsing = (component) => {
         component.complexPhrases = 0
         component.qualifiedPhrases = 0
     }
-
-    clearStats()
 
     let oldValue = null
     const markers = []
